@@ -1,0 +1,9 @@
+WEEK 5 — BEFORE REFACTORING
+
+Run from the repository root:
+  python -m pip install pytest ruff pylint
+  python -m pytest -q
+  ruff check week5/grades.py week5/test_grades.py
+  pylint week5/grades.py week5/test_grades.py
+
+Paste the terminal output below.
