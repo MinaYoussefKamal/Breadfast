@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}BreadFast | Order ahead{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">YOUR CAMPUS CAFETERIA</p>
+    <h1>Good food.<br><span>No waiting.</span></h1>
+    <p class="hero-copy">Order your favorites before the break starts. Pick them up when you're ready.</p>
+    <a class="button button-light" href="#menu">Explore the menu</a>
+  </div>
+  <div class="hero-art" aria-hidden="true">🥪</div>
+</section>
+
+<section class="section" id="menu">
+  <div class="section-heading">
+    <div><p class="eyebrow">FRESH FROM THE CAFETERIA</p><h2>Today's menu</h2></div>
+    <span class="muted">Choose your favorites</span>
+  </div>
+  <div id="menu-grid" class="menu-grid"><p>Loading menu...</p></div>
+</section>
+
+<section class="checkout-layout section">
+  <div class="panel">
+    <p class="eyebrow">YOUR ORDER</p><h2>Your cart</h2>
+    <div id="cart-items"><p class="muted">Your cart is empty.</p></div>
+    <div class="total-row"><strong>Total</strong><strong id="cart-total">EGP 0.00</strong></div>
+  </div>
+  <form class="panel checkout-form" id="checkout-form">
+    <p class="eyebrow">ALMOST THERE</p><h2>Pickup details</h2>
+    <label>Student name<input name="student_name" required maxlength="80" placeholder="Your name"></label>
+    <label>Pickup time<input name="pickup_time" type="time" required></label>
+    <label>Pickup place
+      <select name="pickup_place" required>
+        <option value="">Choose a pickup point</option>
+        <option>Main Cafeteria</option>
+        <option>Library Kiosk</option>
+        <option>Faculty Building</option>
+      </select>
+    </label>
+    <button class="button button-primary" type="submit">Place order</button>
+    <p id="checkout-message" class="message" role="status"></p>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/checkout.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Kitchen Dashboard | BreadFast{% endblock %}
+{% block content %}
+<section class="dashboard-heading">
+  <p class="eyebrow">STAFF WORKSPACE</p>
+  <h1>Kitchen dashboard</h1>
+  <p class="muted">Review incoming orders and keep pickup status up to date.</p>
+</section>
+<section class="section">
+  <div class="section-heading"><h2>Incoming orders</h2><button class="button button-outline" id="refresh-orders">Refresh</button></div>
+  <div id="orders-list" class="orders-list"><p>Loading orders...</p></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/kitchen.js') }}"></script>
+{% endblock %}
